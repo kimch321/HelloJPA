@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -14,15 +15,19 @@ import java.util.Date;
 
 public class SungJuk {
     //GenerationType.IDENTITY 전략은 기본 키를 데이터베이스에 위임하는 전략입니다. 즉, JPA는 데이터베이스에 엔티티를 저장할 때 기본 키 값을 생성합니다.
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int sjno;
+    @Column(length = 10, nullable = false)
     private String name;
     private int kor;
     private int eng;
     private int mat;
+    @Column(nullable = true)
     private int tot;
-    private double avg;
+    @Column(nullable = true, precision = 5, scale = 1)
+    private BigDecimal avg;
+    @Column(length = 1)
     private String grd;
     private Date regdate;
 
