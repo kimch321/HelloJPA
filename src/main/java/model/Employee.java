@@ -9,7 +9,7 @@ import java.sql.Date;
 @Entity
 @Table(name = "employees")
 @Data
-public class Employees {
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "EMPLOYEE_ID")
@@ -33,6 +33,9 @@ public class Employees {
     @Column(name = "MANAGER_ID")
     private Integer mgrid;
     @Column(name = "DEPARTMENT_ID")
-    @JoinColumn(name = "DEPARTMENT_ID")
     private Long deptid;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 }
