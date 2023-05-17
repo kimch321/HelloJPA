@@ -12,6 +12,11 @@
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.use_sql_comments" value="true" />
             <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.connection.url"
+                      value="jdbc:mariadb://fullstacks.csgna22pwwig.ap-northeast-2.rds.amazonaws.com:3306/bigdata"/>
+            <property name="hibernate.connection.driver_class" value="org.mariadb.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="bigdata"/>
+            <property name="hibernate.connection.password" value="bigdata"/>
         </properties>
     </persistence-unit>
 </persistence>
