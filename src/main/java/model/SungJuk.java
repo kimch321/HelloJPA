@@ -10,21 +10,21 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name = "SUNGJUK")
+@Table(name = "sungjuk")
 @Data
 
 public class SungJuk {
     //GenerationType.IDENTITY 전략은 기본 키를 데이터베이스에 위임하는 전략입니다. 즉, JPA는 데이터베이스에 엔티티를 저장할 때 기본 키 값을 생성합니다.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int sjno;
+    private Long sjno;
     @Column(length = 10, nullable = false)
     private String name;
-    private int kor;
-    private int eng;
-    private int mat;
+    private Integer kor;
+    private Integer eng;
+    private Integer mat;
     @Column(nullable = true)
-    private int tot;
+    private Integer tot;
     @Column(nullable = true, precision = 5, scale = 1)
     private BigDecimal avg;
     @Column(length = 1)
