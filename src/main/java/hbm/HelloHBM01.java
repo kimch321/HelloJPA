@@ -10,6 +10,7 @@ import java.util.List;
 
 public class HelloHBM01 {
     public static void main(String[] args) {
+        // xml 설정
         // SesstionFactory 초기화
         String fpath = "src/main/resources/mapping/sungjuk.hbm.xml";
 
